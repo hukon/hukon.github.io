@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-labelledby="t d" font-family="Manrope, 'Helvetica Neue', Arial, sans-serif">
+  <title id="t">HB China Cars ERP architecture</title>
+  <desc id="d">Staff use a React dashboard in the browser. It talks to an Express API with JWT sign-in and user roles, which stores data in PostgreSQL. Client payments, money sent to China in US dollars, customs and commissions are kept in four separate wallets.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" markerWidth="9" markerHeight="9" refX="8" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0E1726"/>
+    </marker>
+  </defs>
+  <rect width="640" height="400" fill="#F3F5F8"/>
+  <rect x="12" y="44" width="110" height="72" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="67" y="75" text-anchor="middle" font-size="17" font-weight="700" fill="#0E1726">Staff</text>
+  <text x="67" y="97" text-anchor="middle" font-size="16" fill="#4B5768">browser</text>
+  <rect x="178" y="44" width="252" height="72" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="304" y="75" text-anchor="middle" font-size="17" font-weight="700" fill="#0E1726">React dashboard</text>
+  <text x="304" y="97" text-anchor="middle" font-size="16" fill="#4B5768">TypeScript · Tailwind</text>
+  <rect x="178" y="150" width="252" height="72" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="304" y="181" text-anchor="middle" font-size="17" font-weight="700" fill="#0E1726">Express API</text>
+  <text x="304" y="203" text-anchor="middle" font-size="16" fill="#4B5768">JWT sign-in · user roles</text>
+  <path d="M490,159 a69,9 0 0 1 138,0 v54 a69,9 0 0 1 -138,0 z" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <path d="M490,159 a69,9 0 0 0 138,0" fill="none" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="559" y="191" text-anchor="middle" font-size="17" font-weight="700" fill="#0E1726">PostgreSQL</text>
+  <text x="559" y="213" text-anchor="middle" font-size="16" fill="#4B5768">database</text>
+  <path d="M124,80 H176" fill="none" stroke="#0E1726" stroke-width="1.8" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <path d="M304,118 V148" fill="none" stroke="#0E1726" stroke-width="1.8" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <path d="M432,186 H488" fill="none" stroke="#0E1726" stroke-width="1.8" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <path d="M559,224 V252 H85" fill="none" stroke="#0E1726" stroke-width="1.8"/>
+  <path d="M85,252 V274" fill="none" stroke="#0E1726" stroke-width="1.8" marker-end="url(#ah)"/>
+  <path d="M239,252 V274" fill="none" stroke="#0E1726" stroke-width="1.8" marker-end="url(#ah)"/>
+  <path d="M393,252 V274" fill="none" stroke="#0E1726" stroke-width="1.8" marker-end="url(#ah)"/>
+  <path d="M547,252 V274" fill="none" stroke="#0E1726" stroke-width="1.8" marker-end="url(#ah)"/>
+  <rect x="12" y="276" width="146" height="62" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="85" y="302" text-anchor="middle" font-size="15" font-weight="700" fill="#0E1726">Client payments</text>
+  <text x="85" y="324" text-anchor="middle" font-size="15" fill="#4B5768">in DZD</text>
+  <rect x="166" y="276" width="146" height="62" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="239" y="302" text-anchor="middle" font-size="15" font-weight="700" fill="#0E1726">Sent to China</text>
+  <text x="239" y="324" text-anchor="middle" font-size="15" fill="#4B5768">in USD</text>
+  <rect x="320" y="276" width="146" height="62" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="393" y="302" text-anchor="middle" font-size="15" font-weight="700" fill="#0E1726">Customs</text>
+  <text x="393" y="324" text-anchor="middle" font-size="15" fill="#4B5768">in DZD</text>
+  <rect x="474" y="276" width="146" height="62" rx="10" fill="#FFFFFF" stroke="#0E1726" stroke-width="1.5"/>
+  <text x="547" y="302" text-anchor="middle" font-size="15" font-weight="700" fill="#0E1726">Commissions</text>
+  <text x="547" y="324" text-anchor="middle" font-size="15" fill="#4B5768">in DZD</text>
+  <text x="12" y="366" font-size="16" fill="#0E1726">Each wallet has its own table, so money is never mixed.</text>
+  <text x="12" y="390" font-size="16" fill="#0E1726">Containers: loaded → at sea → arrived → cleared → delivered</text>
+</svg>

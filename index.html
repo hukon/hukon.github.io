@@ -58,6 +58,7 @@
               <line class="edge" data-to="p-aura-gros" x1="320" y1="180" x2="450" y2="272"/>
               <line class="edge" data-to="p-hb-china-cars" x1="320" y1="180" x2="320" y2="306"/>
               <line class="edge" data-to="p-digital-dream-visa" x1="320" y1="180" x2="190" y2="272"/>
+              <line class="edge" data-to="p-mohassib" x1="320" y1="180" x2="40" y2="262"/>
               <line class="edge" data-to="p-medical-app" x1="320" y1="180" x2="144" y2="195"/>
               <line class="edge" data-to="p-networking" x1="320" y1="180" x2="160" y2="112"/>
             </g>
@@ -97,17 +98,23 @@
               <circle class="dot" cx="450" cy="272" r="8"/>
               <text x="450" y="304" text-anchor="middle">Aura Gros</text>
             </a>
-            <a class="node node--live" href="#p-hb-china-cars" aria-label="HB China Cars" data-summary="A full-stack web app for a car-import business.">
+            <a class="node node--live" href="#p-hb-china-cars" aria-label="HB China Cars ERP" data-summary="An ERP that runs a car-import business: clients, orders, payments, containers and customs.">
               <circle class="hit" cx="320" cy="306" r="22"/>
               <circle class="halo" cx="320" cy="306" r="12"/>
               <circle class="dot" cx="320" cy="306" r="8"/>
-              <text x="320" y="338" text-anchor="middle">HB China Cars</text>
+              <text x="320" y="338" text-anchor="middle">HB China Cars ERP</text>
             </a>
             <a class="node node--live" href="#p-digital-dream-visa" aria-label="Digital Dream Visa website" data-summary="A website in Arabic, English and French for a visa agency in El Eulma.">
               <circle class="hit" cx="190" cy="272" r="22"/>
               <circle class="halo" cx="190" cy="272" r="12"/>
               <circle class="dot" cx="190" cy="272" r="8"/>
               <text x="190" y="304" text-anchor="middle">Digital Dream Visa</text>
+            </a>
+            <a class="node node--academic" href="#p-mohassib" aria-label="Mohassib (graduation project)" data-summary="My Licence graduation project: the accounting module of an ERP, built with Flask and PostgreSQL.">
+              <circle class="hit" cx="40" cy="262" r="22"/>
+              <circle class="halo" cx="40" cy="262" r="12"/>
+              <circle class="dot" cx="40" cy="262" r="7"/>
+              <text x="40" y="292" text-anchor="middle">Mohassib</text>
             </a>
             <a class="node node--academic" href="#p-medical-app" aria-label="Medical app (university project)" data-summary="An Android app for managing medical appointments, built in a team.">
               <circle class="hit" cx="144" cy="195" r="22"/>
@@ -248,22 +255,21 @@
           </article>
 
           <article class="project project--live" id="p-hb-china-cars">
-            <img class="project-image" src="assets/img/projects/hb-china-cars.webp" alt="Screenshot of the HB China Cars web app: a clean sign-in screen with the HB China Cars logo, username and password fields and a blue sign-in button." width="960" height="600" loading="lazy">
+            <img class="project-image" src="assets/img/projects/hb-erp.svg" alt="Diagram: staff use a React dashboard that talks to an Express API with JWT sign-in and user roles; the API stores data in PostgreSQL, where client payments, money sent to China, customs and commissions are four separate wallets." width="640" height="400" loading="lazy">
             <div class="project-body">
-              <h3>HB China Cars</h3>
-              <p class="project-summary">A full-stack web app for a car-import business.</p>
-              <p class="project-for">Built for a friend's car-import business.</p>
+              <h3>HB China Cars ERP</h3>
+              <p class="project-summary">An ERP that runs a car-import business: clients, car orders, payments, shipping containers and customs.</p>
+              <p class="project-for">Built for a friend's car-import business. It replaces my first version, built with React and Django.</p>
               <ul class="project-did">
-                <li>Built the front end with React (Vite).</li>
-                <li>Built the back end with Django.</li>
-                <li>Used Cloudinary to store and serve images.</li>
+                <li>Built a REST API with Node.js, Express and PostgreSQL, with JWT sign-in and user roles.</li>
+                <li>Built the admin dashboard with React, TypeScript and Tailwind CSS.</li>
+                <li>Kept client payments, money sent to China (in USD), customs and commissions in four separate wallets, so money is never mixed.</li>
+                <li>Followed each container from loading to delivery, with document uploads for every client and car.</li>
               </ul>
               <ul class="tags">
-                <li>React</li><li>Vite</li><li>Django</li><li>Cloudinary</li>
+                <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>React</li><li>TypeScript</li>
               </ul>
-              <p class="project-links">
-                <a href="https://hb-cai3.vercel.app" target="_blank" rel="noopener noreferrer">Live app (sign-in required)<span class="sr-only">: HB China Cars (opens in a new tab)</span></a>
-              </p>
+              <p class="project-links"><span class="project-note">Private tool – demo on request</span></p>
             </div>
           </article>
 
@@ -281,6 +287,25 @@
                 <li>Next.js</li><li>next-intl</li>
               </ul>
               <p class="project-links"><span class="project-note">Company website</span></p>
+            </div>
+          </article>
+
+          <article class="project project--academic" id="p-mohassib">
+            <img class="project-image" src="assets/img/projects/mohassib.webp" alt="Screenshot of the Mohassib accounting dashboard with demo data: cash position, net result, receivables and payables cards, a revenue versus expenses chart and a cash-flow chart." width="960" height="600" loading="lazy">
+            <div class="project-body">
+              <h3>Mohassib: ERP accounting module</h3>
+              <p class="project-summary">The accounting module of an ERP inspired by Odoo: invoices, bills, payments, VAT and financial reports.</p>
+              <p class="project-for">Licence graduation project, 2026, in a team of two, supervised by Dr. L. Douidi.</p>
+              <ul class="project-did">
+                <li>Built the module with Python (Flask), SQLAlchemy and PostgreSQL.</li>
+                <li>Created the journal entries automatically for every invoice and payment (double-entry bookkeeping).</li>
+                <li>Generated the trial balance, profit and loss, balance sheet, VAT return and PDF invoices.</li>
+                <li>Exposed a REST API so that the Sales and Purchases modules built by other teams could talk to it.</li>
+              </ul>
+              <ul class="tags">
+                <li>Python</li><li>Flask</li><li>PostgreSQL</li><li>REST API</li><li>Docker</li>
+              </ul>
+              <p class="project-links"><span class="project-note">University project – report and demo on request</span></p>
             </div>
           </article>
 

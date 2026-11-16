@@ -71,9 +71,9 @@ test('base.css defines the palette and self-hosted fonts', () => {
 // ---- Task 2: page content and layout ----
 
 const html = () => readPage('index.html');
-const CARD_IDS = ['p-alces','p-student-organizer','p-shops','p-visa-manager','p-aura-gros','p-hb-china-cars','p-digital-dream-visa','p-medical-app','p-networking'];
+const CARD_IDS = ['p-alces','p-student-organizer','p-shops','p-visa-manager','p-aura-gros','p-hb-china-cars','p-digital-dream-visa','p-mohassib','p-medical-app','p-networking'];
 
-test('has all sections and the nine project cards in order', () => {
+test('has all sections and the ten project cards in order', () => {
   for (const id of ['about','projects','experience','education','skills','languages','contact']) assert.match(html(), new RegExp(`id="${id}"`));
   const ids = [...html().matchAll(/<article class="project[^"]*" id="([^"]+)"/g)].map(m => m[1]);
   assert.deepEqual(ids, CARD_IDS);
@@ -130,7 +130,7 @@ test('every font file referenced by base.css exists and is non-empty', () => {
 test('map nodes are links to existing cards', () => {
   const t = html();
   const targets = [...t.matchAll(/<a class="node[^"]*" href="#(p-[^"]+)"/g)].map(m => m[1]);
-  assert.equal(targets.length, 9);
+  assert.equal(targets.length, 10);
   for (const id of targets) assert.match(t, new RegExp(`<article class="project[^"]*" id="${id}"`));
   assert.match(t, /class="node node--soon" href="#p-networking"/);
 });
@@ -153,7 +153,7 @@ test('map markup: group role, one node and one edge per card, centre node, live 
   assert.deepEqual(kinds, {
     'p-alces': 'node--live', 'p-student-organizer': 'node--live', 'p-shops': 'node--live', 'p-visa-manager': 'node--live',
     'p-aura-gros': 'node--live', 'p-hb-china-cars': 'node--live', 'p-digital-dream-visa': 'node--live',
-    'p-medical-app': 'node--academic', 'p-networking': 'node--soon',
+    'p-mohassib': 'node--academic', 'p-medical-app': 'node--academic', 'p-networking': 'node--soon',
   });
   for (const [node, id] of svg[0].matchAll(/<a class="node[^"]*" href="#(p-[^"]+)"[\s\S]*?<\/a>/g)) {
     assert.match(node, /^<a [^>]*aria-label="[^"]+"/, id);
@@ -179,7 +179,7 @@ test('map script: rAF packets, pause when hidden; CSS: no draw-in under reduced 
 
 test('map node names start with their visible label (WCAG 2.5.3 label in name)', () => {
   const nodes = [...html().matchAll(/<a class="node[^"]*" href="#(p-[^"]+)"[^>]*aria-label="([^"]+)"[\s\S]*?<text [^>]*>([^<]+)<\/text>/g)];
-  assert.equal(nodes.length, 9);
+  assert.equal(nodes.length, 10);
   for (const [, id, name, label] of nodes)
     assert.ok(name.toLowerCase().startsWith(label.trim().toLowerCase()), `${id}: "${name}" should start with "${label}"`);
 });
@@ -201,8 +201,9 @@ const IMAGES = {
   'p-shops': 'shops.webp',
   'p-visa-manager': 'visa-manager.svg',
   'p-aura-gros': 'aura-gros.webp',
-  'p-hb-china-cars': 'hb-china-cars.webp',
+  'p-hb-china-cars': 'hb-erp.svg',
   'p-digital-dream-visa': 'digital-dream-visa.webp',
+  'p-mohassib': 'mohassib.webp',
   'p-medical-app': 'medical-app.webp',
   'p-networking': 'networking.svg',
 };
@@ -237,7 +238,7 @@ test('screenshots are modest WebP files', () => {
 });
 
 test('diagrams are accessible SVGs with a title and no external references', () => {
-  for (const name of ['alces', 'visa-manager', 'networking']) {
+  for (const name of ['alces', 'visa-manager', 'hb-erp', 'networking']) {
     const f = `assets/img/projects/${name}.svg`;
     const svg = readPage(f);
     assert.match(svg, /<svg [^>]*role="img"/, f);
